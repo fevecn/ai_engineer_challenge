@@ -72,7 +72,7 @@ A arquitetura segue o diagrama da imagem fornecida, que mostra o fluxo de agente
   - Seleção de colunas: Foco em datas de internação, óbitos, uso de UTI, status de vacinação.
   - Tratamento: Tratamento seguindo as guidelines da geração de relatório do repositório do Ministério de Saúde.
 - **Gráficos**: Gerados com Matplotlib e embutidos no HTML via base64.
-- **Guardrails**: Implementado uma LLM no final da rede para revisão, o objetivo é limitar consultas a fontes confiáveis, evitar alucinações (validação cruzada entre dados e notícias) e manejar erros (ex.: retry em falhas de API).
+- **Guardrails**: Implementada uma LLM no final da rede para revisão, o objetivo é limitar consultas a fontes confiáveis, evitar alucinações (validação cruzada entre dados e notícias) e manejar erros (ex.: retry em falhas de API).
 
 ## Governança e Transparência
 
@@ -80,4 +80,5 @@ A arquitetura segue o diagrama da imagem fornecida, que mostra o fluxo de agente
 - **Registro de Decisões**: Cada agente registra seu raciocínio em um formato estruturado (JSON) para rastreabilidade.
 - **Guardrails**: 
   - Validação de fontes: Apenas sites oficiais e jornalísticos confiáveis.
-  - Tratamento de Erros: Handlers para APIs falhando, com fallbacks para dados cached.
+  - Checa as métricas que saíram do Agente de Análise
+  - Reduz a probabilidade de alucinações com prompts específicos para conferir as informações de output dos outros agentes.
