@@ -53,7 +53,7 @@ A solução utiliza LangChain para orquestrar agentes de IA que processam dados,
 
 ## Arquitetura da Solução
 
-A arquitetura é baseada em agentes de IA orquestrados por LangChain e LangGraph. O diagrama conceitual está disponível no arquivo `arquitetura.pdf` neste repositório. Ele ilustra:
+A arquitetura é baseada em agentes de IA orquestrados por LangChain. O diagrama conceitual está disponível no arquivo `Diagrama_Agents_SRAG.png` neste repositório. Ele ilustra:
 
 - **Agente Principal (Orquestrador)**: Um `Runnable Parallel` que coordena os fluxos paralelos.
 - **Ferramentas (Tools)**:
@@ -72,7 +72,7 @@ A arquitetura segue o diagrama da imagem fornecida, que mostra o fluxo de agente
   - Seleção de colunas: Foco em datas de internação, óbitos, uso de UTI, status de vacinação.
   - Tratamento: Tratamento seguindo as guidelines da geração de relatório do repositório do Ministério de Saúde.
 - **Gráficos**: Gerados com Matplotlib e embutidos no HTML via base64.
-- **Guardrails**: Implementada uma LLM no final da rede para revisão, o objetivo é limitar consultas a fontes confiáveis, evitar alucinações (validação cruzada entre dados e notícias) e manejar erros (ex.: retry em falhas de API).
+- **Guardrails**: Implementada uma LLM no final da rede para revisão, o objetivo é limitar consultas a fontes confiáveis, evitar alucinações (validação cruzada entre dados e notícias) e manejar erros.
 
 ## Governança e Transparência
 
